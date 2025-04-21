@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Saytim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <style>
+        body {
+            background-color:  #03034A!important;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .form-input {
+            margin: 10px auto;
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header / Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" >MOOALLIF</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" >Biz bilan bog'laning:+998914294142 | +998998790925</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com/MOOALLIF"><i class="fa-brands fa-instagram"></i>  Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Rasmni Static papkadan yuklash -->
+<div class="container text-center mt-4">
+    <img src="{% static 'images/logo3.png' %}" alt="Logo" class="img-fluid" width="500px">
+</div>
+
+<!-- Ariza qoldirish formasi -->
+<div class="container mt-5">
+    <h3 class="text-center">Ariza Qoldirish</h3>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Ismingiz</label>
+            <input type="text" class="form-control" id="name" name="ismi" placeholder="Ismingizni kiriting" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email manzilingizni kiriting" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Telefon Nomer</label>
+            <input type="number" class="form-control" id="phone" name="phone" placeholder="Telefon raqamingizni kiriting" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Xabar</label>
+            <textarea class="form-control" id="message" name="xabar" rows="4" placeholder="Arizangizni kiriting" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Yuborish</button>
+    </form>
+</div>
+<div class="container mt-5 mb-5">
+    <h3 class="mb-4 text-center">Ko‘p so‘raladigan savollar</h3>
+    <div class="accordion" id="faqAccordion">
+        <!-- Savol 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Qanday obyektlar ixtiro sifatida tan olinmaydi?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    O‘zbekiston Respublikasining «Ixtirolar, foydali modellar va sanoat namunalari to‘g‘risida»gi qonuniga ko‘ra quyidagilar ixtiro sifatida e’tirof etilmaydi: ilmiy nazariyalar va matematika usullari; tashkil etish va boshqarish usullari; shartli belgilar, jadvallar, qoidalar; aqliy operatsiyalarni bajarish qoidalari va usullari; algoritmlar, chizma loyihalar, estetik yechimlar va boshqa shu kabi obyektlar.
+                </div>
+            </div>
+        </div>
+
+        <!-- Savol 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Ixtiro qanday himoya qilinadi?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                   Ixtiroga bo‘lgan huquqlar O‘zbekiston Respublikasi hududida "Ixtirolar, foydali modellar va sanoat namunalari to‘g‘risidagi" Qonun bilan boshqariladi va ixtiroga patent bilan tasdiqlanadi.
+                </div>
+            </div>
+        </div>
+
+        <!-- Savol 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Patenti tugagach ixtiro kimga tegishli bo‘ladi?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Patentining amal qilish muddati tugagan ixtiro omma mulkiga aylanadi. Yaʼni, boshqa shaxslar tomonidan foydalanish uchun ochiq bo‘ladi.
+                </div>
+            </div>
+        </div>
+
+        <!-- Savol 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Ixtiro patenti necha yil amal qiladi?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                   Vazirlikka patent berish haqidagi talabnoma topshirilgan sanadan e’tiboran hisoblaganda ixtiro patenti yigirma yil mobaynida amal qiladi.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Patent nima?
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                   Ixtiroga patent - bu ixtironing ustuvorligi, muallifi, ixtiro egasining unga egalik qilish, undan foydalanish va uni tasarruf etishga doir mutlaq huquqini tasdiqlaydigan muhofaza hujjatidir.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                   Patent egasi qanday huquqlarga ega bo‘ladi?
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                   Patent egasi ixtirodan foydalanish va undan foydalanish huquqini boshqa shaxslarga berish borasida mutlaq huquqqa ega.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    Qanday obyekt huquqiy muhofaza qilinadi?
+                </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Agar obyekt patentga layoqatlilikning quyidagi uchta shartiga javob bersa, ixtiroga patent berilishi mumkin: yangi bo‘lsa, yaʼni mavjud texnika darajasida maʼlum bo‘lmasa; ixtirolik darajasiga ega bo‘lsa, yaʼni taklif etilayotgan yechim ushbu texnika sohasi mutaxassisi uchun yaqqol ayon bo‘lmasa; sanoatda qo‘llash mumkin bo‘lsa, yaʼni ixtirodan sanoat, qishloq xo‘jaligi, sog‘liqni saqlash va faoliyatning boshqa sohalarida foydalanish mumkin bo‘lsa.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                    Ixtiroga patent kim tomonidan beriladi?
+                </button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Patent vakolatli davlat organi hisoblangan O‘zbekiston Respublikasi Adliya vazirligi tomonidan beriladi. Ixtironing patentga layoqatlilik shartlariga muvofiqligi davlat ekspertizasini o‘tkazish natijasida aniqlanadi. Agar ekspertiza natijalariga ko‘ra ixtironing ko‘rsatilgan shartlarga muvofiqligi aniqlansa, u holda O‘zbekiston Respublikasi hududida 20 yil davomida amal qiladigan patent beriladi.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                    Ixtiro nima?
+                </button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    O‘zbekiston Respublikasining «Ixtirolar, foydali modellar va sanoat namunalari to‘g‘risida»gi qonuniga binoan, mahsulot yoki usulga tegishli har qanday sohadagi texnik yechim ixtiro sifatida eʼtirof etiladi. Ixtiro sifatida, masalan, usullar, qurilmalar, moddalar, mikroorganizmlar shtammlari, o‘simliklar va hayvonlar hujayralarining turlari tan olinadi.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                    Patent berish haqidagi talabnomaning davlat ekspertizasi qanday tartibda o’tkaziladi?
+                </button>
+            </h2>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Davlat ekspertizasi soʼrovi boʼyicha materiallarni taqdim etishning talabnoma beruvchi tomonidan oʼtkazib yuborilgan muddatlari, belgilangan muddatlarni uzaytirish muqarrarligini taqozo etgan sabablar tasdiqlangan va patent boji toʼlangan taqdirda, Vazirlik tomonidan tiklanishi mumkin. Oʼtkazib yuborilgan muddatlarni tiklash toʼgʼrisidagi iltimosnoma talabnoma beruvchi tomonidan oʼtkazib yuborilgan muddat tugagan kundan boshlab koʼpi bilan oʼn ikki oy ichida topshirilishi mumkin. Talabnoma beruvchi patent berish haqidagi talabnoma topshirilgan sanadan eʼtiboran ikki oy mobaynida talabnomada koʼrsatilgan sanoat mulki obʼektining mohiyatini oʼzgartirmagan holda unga tuzatishlar, aniqliklar yoki qoʼshimcha materiallar kiritish huquqiga ega. Patent berish haqidagi talabnoma boʼyicha tuzatishlar, aniqliklar yoki qoʼshimcha materiallar patent boji toʼlangan taqdirda, koʼrsatilgan muddat oʼtganidan keyin, lekin Vazirlik patent berish haqida qaror qabul qilguniga qadar taqdim etilishi mumkin. Belgilangan talablar buzilgan holda rasmiylashtirilgan patent berish haqidagi talabnoma yuzasidan talabnoma beruvchiga soʼrov yuborilib, unda shu soʼrov yoʼllangan sanadan eʼtiboran uch oy ichida tuzatishlar kiritilgan yoki yetishmayotgan materiallarni taqdim etish taklif qilinadi. Аgar talabnoma beruvchi soʼralgan materiallarni yoki belgilangan muddatni uzaytirish toʼgʼrisidagi iltimosnomani koʼrsatilgan muddatda taqdim etmasa, patent berish haqidagi talabnoma chaqirib olingan hisoblanadi. Belgilangan muddat talabnoma beruvchining iltimosnomasiga koʼra shu muddat oʼtgan sanadan keyin koʼpi bilan oʼn ikki oyga uzaytirilishi mumkin.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEleven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                    Ixtiroga patent qay tarzda olinadi?
+                </button>
+            </h2>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Oʼzbekiston Respublikasining «Ixtirolar, foydali modellar va sanoat namunalari toʼgʼrisida»gi qonuniga koʼra ixtiroga patent berish haqidagi talabnoma topshirish tartibi quyidagilarni oʼz ichiga oladi: Patent olish uchun talabnoma muallif, ish beruvchi yoki ularning vorislari tomonidan Vazirlikka taqdim etiladi. Patent olish uchun talabnoma shaxsan, patent vakili yoki ishonchli shaxs orqali berilishi mumkin. Ixtiroga talabnoma quyidagilardan iborat boʼladi: ixtiro muallifi (hammualliflari) yoki patent olish soʼralayotgan shaxs nomi, shuningdek, ularning turarjoylari yoki manzillari koʼrsatilgan holda yozilgan patent berish toʼgʼrisidagi ariza; • ixtiro mohiyatini toʼliq ochib beruvchi, uni amalga oshirish uchun yetarli boʼlgan bayoni; • ixtironing mohiyatini ifodalovchi va bayoniga toʼliq mos tushuvchi formulasi; • agar ixtiro mohiyatini tushunish uchun zarur boʼlsa, chizma va boshqa materiallar;agar ixtiro mohiyatini tushunish uchun zarur boʼlsa, chizma va boshqa materiallar; • ixtiro referati. Talabnoma Oʼzbekiston Respublikasining Ixtiroga patent berish uchun talabnomani tuzish, topshirish va koʼrib chiqish qoidalariga muvofiq rasmiylashtiriladi. Talabnomaga quyidagi hujjatlar ilova qilinadi: • talabnoma topshirish uchun patent boji toʼlanganligini tasdiqlovchi hujjat; • patent vakili yoki ishonchli shaxs orqali talabnoma topshirilgan hollarda talabnoma topshiruvchi tomonidan berilgan ishonchnoma. Sanoat mulkini muhofaza qilish boʼyicha Parij konventsiyasiga muvofiq konvension ustuvorlik huquqidan foydalanishni istagan talabnoma topshiruvchi talabnomada buni koʼrsatishi va Vazirlikka talabnoma topshirilgan kundan boshlab uch oydan kechiktirmay zaruriy materiallarni taqdim etishi zarur.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwelve">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                    Patent berish haqidagi talabnoma materiallari sir saqlanishi kafolatlanganmi?
+                </button>
+            </h2>
+            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Patent berish haqidagi talabnoma materiallaridagi maʼlumotlar Vazirlik tomonidan sir saqlanishi kerak va ular haqidagi axborot talabnoma beruvchi yoki patent egasining roziligisiz berilmaydi. Talabnoma materiallaridagi axborotni ixtiro haqidagi talabnoma toʼgʼrisidagi yoki foydali model va sanoat namunasi davlat roʼyxatidan oʼtkazilganligi toʼgʼrisidagi maʼlumotlar rasmiy ravishda eʼlon qilingunga qadar oshkor etganlik qonunga muvofiq javobgarlikka sabab boʼladi. Аgar ixtiro haqidagi talabnoma yoki foydali model haqidagi talabnoma materiallarida davlat sirlarini tashkil qilgan maʼlumotlar mavjud boʼlsa, bunday talabnoma boʼyicha ish yuritish qonun hujjatlarida belgilangan tartibda amalga oshiriladi. Vazirlik tomonidan koʼrib chiqish uchun qabul qilib olingan patent berish haqidagi talabnomalar talabnoma beruvchilarga qaytarilmaydi.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThirteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                    Ixtiroga patent kundalik hayotda qanday ahamiyatga ega?
+                </button>
+            </h2>
+            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Patentlangan ixtirolar inson hayotining deyarli barcha sohalariga elektr yoritkich (patent egalari - Edison va Sven) va plastikdan (patent egasi - Beyklend) boshlab, to sharikli ruchkalar ishlab chiqarishgacha (patent egasi - Biro) kirib bordi. Barcha patent egalari patent himoyasi taqdim etilishi evaziga oʼz ixtirolari toʼgʼrisidagi maʼlumotlarni omma uchun oshkor qiladilar. Muntazam ravishda boyib borayotgan umumiy bilimlar xazinasi boshqa kishilarning ham ijodiy faoliyati yanada rivojlanishiga yoʼl ochadi. Shunday qilib, ixtiro uchun berilgan patent nafaqat oʼz egasiga himoya taqdim etadi, balki har jihatdan qimmatli maʼlumotlarni oʼz ichiga oladi, boʼlgʼusi tadqiqotchi va ixtirochilar avlodi uchun ilhom manbai vazifasini oʼtaydi.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFourteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                    Vazirlikning Аpellyatsiya kengashi qanday vazifalarni bajaradi?
+                </button>
+            </h2>
+            <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Vazirlikning Аpellyatsiya kengashi qarorlar qabul qilishda mustaqildir va oʼz faoliyatida O‘zbekiston Respublikasining «Ixtirolar, foydali modellar va sanoat namunalari togrisida»gi qonuni hamda boshqa qonun hujjatlariga amal qiladi. Аpellyatsiya kengashi:
+                    • Vazirlikning talabnomada koʼrsatilgan sanoat mulki obʼektlari xususidagi qarori ustidan;
+                    • sanoat mulki obʼektlariga patent berilganligiga qarshi manfaatdor yuridik va jismoniy shaxslar tomonidan;
+                    • sanoat mulki obʼektlari patentlarining haqiqiyligiga qarshi berilgan apellyatsiyalarni koʼrib chiqadi.
+                    • Аpellyatsiya kengashi oʼz vakolatlari doirasida apellyatsiyalarning boshqa turlarini ham koʼrib chiqishi mumkin.
+                    • Аpellyatsiya kengashi toʼgʼrisidagi nizom Oʼzbekiston Respublikasi Vazirlar Mahkamasi tomonidan tasdiqlanadi.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFifteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                    Avval foydalanganlik huquqi nima?
+                </button>
+            </h2>
+            <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Sanoat mulki obyekti ustuvorligi belgilangan sanaga qadar uning muallifidan mustaqil tarzda aynan o‘xshash bo‘lgan yechimdan foydalangan yoki shunga yetarli darajada tayyorgarlik ko‘rgan har qanday yuridik yoki jismoniy shaxs ishlab chiqarish hajmini kengaytirmagan tarzda, keyinchalik ham undan bepul foydalanish huquqini saqlab qoladi. Avval foydalanganlik huquqi boshqa yuridik yoki jismoniy shaxsga faqat aynan o‘xshash yechimdan foydalanilgan yoki shunga yetarli darajada tayyorgarlik ko‘rilgan ishlab chiqarish bilan birgalikda topshirilishi mumkin.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS (CDN orqali) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -5,4 +5,4 @@ from .models import Ariza
 class ArizaForm(forms.ModelForm):
     class Meta:
         model = Ariza
-        fields = ['ismi', 'email', 'xabar']
+        fields = ['ismi', 'email', 'xabar', 'telefon_nomer']
